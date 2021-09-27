@@ -9,7 +9,8 @@ At present, the framework mainly applies Dash, whose links to its tutorials and 
 * [Reference](#Reference)
 
 ## Functional Design
-User that requests the web dashboard can only access `input.py`. First install os module locally, and then store queries (type string) and the corresponding table definitions (typr string) into mySql_select_Query (type list) and chart_def (type list). To generate web dashboard, simply run helpfunction `run()`.
+User that requests the web dashboard can only access `input.py`.    
+First install os module locally, and then store queries (type string) and the corresponding table definitions (typr string) into mySql_select_Query (type list) and chart_def (type list). 
 
 ```
 import os
@@ -17,7 +18,9 @@ import os
 # intialization
 mySql_select_Query = [...] 
 chart_def = [...]
-
+```
+To generate web dashboard, simply run helpfunction `run()` in the same .py file.
+```
 # run the program
 run()
 ```
