@@ -11,24 +11,24 @@ At present, the framework mainly applies Dash, whose links to its tutorials and 
 ## Functional Design
 User that requests the web dashboard need to prepare a .JSON file that contains queries and chart_def, in the form that is shown below:
 ```
-        {"items": [
-                {"query": "...;", "chart_def": "table"},
-                {"query": "...;", "chart_def": "table"}
-            ]
-        }
+    {"items": [
+            {"query": "...;", "chart_def": "table"},
+            {"query": "...;", "chart_def": "table"}
+        ]
+    }
 ```
 First install os module locally, and import it. User can get access to a help function called `run(file_dir)`, which receive a parameter called file_dir that points to the prepared json file as shown above. The help function pass the file_dir as an argv.  
 
 ```
-        import os
-        def run(file_dir): 
-            os.system("python app.py " + file_dir)
-            return
+  import os
+  def run(file_dir): 
+      os.system("python app.py " + file_dir)
+      return
 ```
 To generate web dashboard, simply run helpfunction `run(file_dir)`.
 ```
-        # run the program
-        run("input.json") 
+  # run the program
+  run("input.json") 
 ```
 
 ## Algorithmic Design
