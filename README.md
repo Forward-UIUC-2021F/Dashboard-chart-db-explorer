@@ -33,7 +33,8 @@ run("input.json")
 
 ## Algorithmic Design
 The user store the query and chart_def in pairs inside of the JSON file and pass the file directory into the "dashboard generator". The `helpfunc.py` file takes this information, it reads the queries from the file and pass them to the database, and get the query result. The `chart_def.py` file takes the result and the (unchanged) chart_def and transfer the result into chart configurations according to the char_def. The configuration and the chart_def can be turned into dashboard in the `app.py` file once the file is run by the user.
-
+The following is the diagram that depicts the process that is described in the previous paragram.
+![This is an image](/algorithm_diagram.png)
 
 ## Reference
 * [Essay That Introduces Dash](https://medium.com/plotly/introducing-dash-5ecf7191b503)
