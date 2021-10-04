@@ -57,6 +57,8 @@ The following is the diagram that depicts the process that is described in the p
 
 ![This is an image](/algorithm_diagram.png)
 
+Present available chart type includes: table, scatter, line chart, histogram
+
 ## Reference
 * [Essay That Introduces Dash](https://medium.com/plotly/introducing-dash-5ecf7191b503)
 * [Dash Github](https://github.com/plotly/dash/)
