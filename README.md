@@ -13,14 +13,14 @@ At present, the framework mainly applies Dash, whose links to its tutorials and 
 
 User that requests the web dashboard need to prepare a `.JSON` file that contains queries, chart_def, and user-defined x y mapping that points from query result table to chart. Here, the index(idx) corresponds to the order (start from 0) of the selected elements in the query. For example, if the query select id and average_vote, then {...,"x":[1],...} means that we take average_vote as the x axis. The users can also choose not to write x y mapping explicitly. In this case, the x y axis will be decidedly automatically in the order of the selected element.  
 
-Line-up queries are stored in "item":
+Line-up charts are stored in "item":
 ```
 "item": [
         {"query": "...;", "chart_def": "table/line chart/histogram/scatter","x":[idx],"y":[idx]},  
         ...
     ]
 ```
-Aside queries are stored in "items":
+Aside charts are stored in "items":
 ```
 still Updating...
 ```
