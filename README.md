@@ -13,23 +13,19 @@ At present, the framework mainly applies Dash, whose links to its tutorials and 
 
 User that requests the web dashboard need to prepare a `.JSON` file that contains queries, chart_def, and user-defined x y mapping that points from query result table to chart. Here, the index(idx) corresponds to the order (start from 0) of the selected elements in the query. For example, if the query select id and average_vote, then {...,"x":[1],...} means that we take average_vote as the x axis. The users can also choose not to write x y mapping explicitly. In this case, the x y axis will be decidedly automatically in the order of the selected element.  
 
-Line-up charts are stored in "item":
+An example `input.json` file is presented below,
 ```
-"item": [
-        {"query": "...;", "chart_def": "table/line chart/histogram/scatter","x":[idx],"y":[idx]},  
-        ...
-    ]
-```
-Aside charts are stored in "items":
-```
-still Updating...
-```
-In general, the example input can be:
-```
-{
-"item": [...], "items": [...]
+{"0chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
+ "1chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
+ "2chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
+ "3markdown": ["...", "..."],
+ "4markdown": ["..."],
+ ...
+ "layout": {"top":[...(e.g. 0,1,2,3,4...)],"body":{"left":[...],("middle":[...],) "right": [...] },"bottom":[...]}
 }
 ```
+Here, every field for chart and markdown begin with an unique int as an identity number that can be used in the layout part. In the layout part, the user is free to throw away any of the top, body or bottom; further, for the body part, the user is free to exclude the middle part.
+
 < __Run Code__ >   
 
 First install os module locally, and import it. User can get access to a help function called `run(file_dir)`, which receive a parameter called file_dir that points to the prepared json file as shown above. The help function pass the file_dir as an argv.  
