@@ -24,7 +24,10 @@ An example `input.json` file is presented below,
  "layout": {"top":[...(e.g. 0,1,2,3,4...)],"body":{"left":[...],("middle":[...],) "right": [...] },"bottom":[...]}
 }
 ```
-Here, every field for chart and markdown begin with an unique int as an identity number that can be used in the layout part. In the layout part, the user is free to throw away any of the top, body or bottom; further, for the body part, the user is free to exclude the middle part.
+Here, every field for chart and markdown begin with an unique int (e.g. __0__ in "0chart") as an identity number that can be used to refer to it in the layout part. Every field is considered as a section. It can has several components, which will be presented in sequential order on the page. For example, in `ochart` section, users can include two or more queries, and the result charts will be shown vertically.   
+
+In the layout part, the user can divide the whole page into at most three parts (top/body(left/middle/right side by side)/bottom) and is free to throw away any of them; further, for the body part, the user is free to exclude any of the three sub-parts, i.e. left, middle and right, and these sub-parts are shown horizontally.
+
 
 < __Run Code__ >   
 
@@ -46,6 +49,7 @@ run("input.json")
 
 ## Algorithmic Design
 The user store the query and chart_def in pairs inside of the JSON file and pass the file directory into the "dashboard generator". The `helpfunc.py` file takes this information, it reads the queries from the file and pass them to the database, and get the query result. The `chart_def.py` file takes the result and the (unchanged) chart_def and transfer the result into chart configurations according to the char_def. The configuration and the chart_def can be turned into dashboard in the `app.py` file once the file is run by the user.
+
 The following is the diagram that depicts the process that is described in the previous paragram.
 
 ![This is an image](/algorithm_diagram.png)
