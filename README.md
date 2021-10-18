@@ -9,22 +9,27 @@ At present, the framework mainly applies Dash, whose links to its tutorials and 
 * [Reference](#Reference)
 
 ## Functional Design
-< __Input Definition__ >  
+#### Input Definition 
 
-User that requests the web dashboard need to prepare a `.JSON` file that contains queries, chart_def, and user-defined x y mapping that points from query result table to chart. Here, the index(idx) corresponds to the order (start from 0) of the selected elements in the query. For example, if the query select id and average_vote, then {...,"x":[1],...} means that we take average_vote as the x axis. The users can also choose not to write x y mapping explicitly. In this case, the x y axis will be decidedly automatically in the order of the selected element.  
+User that requests the web dashboard need to prepare a `.JSON` file that contains layout (of the dashboard), queries and their corresponding chart_def, or other elements like markdown. By default, the x y mapping is in the order of the selected element in the corresponding query, But the users can also choose to write x y mapping explicitly. Here, the index(idx) corresponds to the order (start from 0) of the selected elements in the given query. For example, if the query select id and average_vote, then {...,"x":[1],...} means that we take average_vote as the x axis.   
 
 An example `input.json` file is presented below,
 ```
-{"items": [{"query": "...", "chart_def": "table" (, "x": [...(e.g. 0 )],"y" : [...])}, ...],
+{"0chart": [{"query": "...", "chart_def": "table" (, "x": [...(index e.g 0)],"y" : [...])}, ...],
+ "1chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
+ "2chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
+ "3markdown": ["...", "..."],
+ "4markdown": ["..."],
  ...
+ "layout": {"top":[...(e.g. 0,1,2,3,4...)],"body":{"left":[...],("middle":[...],) "right": [...] },"bottom":[...]}
 }
 ```
-for side-by-side chart relation, we define,
-```
-(still updating)
-```
+Here, every field for chart and markdown begin with an unique int (e.g. __0__ in "0chart") as an identity number that can be used to refer to it in the layout part. Every field is considered as a section. It can has several components, which will be presented in sequential order on the page. For example, in `ochart` section, users can include two or more queries, and the result charts will be shown vertically.   
 
-< __Run Code__ >   
+In the layout part, the user can divide the whole page into at most three parts (top/body/bottom) and is free to throw away any of the three section; further, the body part is divided into at most three side-by-side sub-sections, which are named left/middle/right, and user is free to exclude any of the three sub-parts.
+
+
+#### Running Code   
 
 First install os module locally, and import it. User can get access to a help function called `run(file_dir)`, which receive a parameter called file_dir that points to the prepared json file as shown above. The help function pass the file_dir as an argv.  
 
