@@ -15,19 +15,14 @@ User that requests the web dashboard need to prepare a `.JSON` file that contain
 
 An example `input.json` file is presented below,
 ```
-{"0chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
- "1chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
- "2chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
- "3markdown": ["...", "..."],
- "4markdown": ["..."],
+{"items": [{"query": "...", "chart_def": "table" (, "x": [...(e.g. 0 )],"y" : [...])}, ...],
  ...
- "layout": {"top":[...(e.g. 0,1,2,3,4...)],"body":{"left":[...],("middle":[...],) "right": [...] },"bottom":[...]}
 }
 ```
-Here, every field for chart and markdown begin with an unique int (e.g. __0__ in "0chart") as an identity number that can be used to refer to it in the layout part. Every field is considered as a section. It can has several components, which will be presented in sequential order on the page. For example, in `ochart` section, users can include two or more queries, and the result charts will be shown vertically.   
-
-In the layout part, the user can divide the whole page into at most three parts (top/body(left/middle/right side by side)/bottom) and is free to throw away any of them; further, for the body part, the user is free to exclude any of the three sub-parts, i.e. left, middle and right, and these sub-parts are shown horizontally.
-
+for side-by-side chart relation, we define,
+```
+(still updating)
+```
 
 < __Run Code__ >   
 
