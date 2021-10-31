@@ -21,12 +21,12 @@ An example `input.json` file is presented below,
  "3markdown": ["...", "..."],
  "4markdown": ["..."],
  ...
- "layout": {"top":[...(e.g. 0,1,2,3,4...)],"body":{"left":[...],("middle":[...],) "right": [...] },"bottom":[...]}
+ "layout": {"row0": {"4": [width, height], ...},"row1": {...}}
 }
 ```
-Here, every field for chart and markdown begin with an unique int (e.g. __0__ in "0chart") as an identity number that can be used to refer to it in the layout part. Every field is considered as a section. It can has several components, which will be presented in sequential order on the page. For example, in `ochart` section, users can include two or more queries, and the result charts will be shown vertically.   
+Here, every field for chart and markdown begin with an unique int (e.g. __0__ in "0chart") as an identity number that can be used to refer to it in the layout part. Every field is considered as a section. It can has several components, which will be presented in sequential order on the page. For example, in `0chart` section, users can include two or more queries, and the result charts will be shown vertically.   
 
-In the layout part, the user can divide the whole page into at most three parts (top/body/bottom) and is free to throw away any of the three section; further, the body part is divided into at most three side-by-side sub-sections, which are named left/middle/right, and user is free to exclude any of the three sub-parts.
+In the layout part, the user can define the page in rows, as indicated by "row0", "row1", etc. Each row can have several subsections, which will be presented side by side. And tge weight and height information will be translated into -% information.
 
 
 #### Running Code   
