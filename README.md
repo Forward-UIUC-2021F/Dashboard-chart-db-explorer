@@ -15,18 +15,32 @@ User that requests the web dashboard need to prepare a `.JSON` file that contain
 
 An example `input.json` file is presented below,
 ```
-{"0chart": [{"query": "...", "chart_def": "table" (, "x": [...(index e.g 0)],"y" : [...])}, ...],
- "1chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
- "2chart": [{"query": "...", "chart_def": "table" (, "x": [...],"y" : [...])}, ...],
- "3markdown": ["...", "..."],
- "4markdown": ["..."],
- ...
- "layout": {"row0": {"4": [width, height], ...},"row1": {...}}
+{
+  "name_it_your_self 1": [
+    {"query": "...;", "chart_def": "histogram/line chart/scatter/histogram"(,"title": "...","x": [1], "y": [0])}
+  ],
+  "name_it_your_self 2": ["...this is for markdown..."],
+  "charts": ["name_it_your_self 1"],
+  "markdowns": ["name_it_your_self 2"],
+  "layout": {"name_it_your_self 2": ["name_it_your_self 1","name_it_your_self 2",...],"name_it_your_self 3": [...]}
 }
-```
-Here, every field for chart and markdown begin with an unique int (e.g. __0__ in "0chart") as an identity number that can be used to refer to it in the layout part. Every field is considered as a section. It can has several components, which will be presented in sequential order on the page. For example, in `0chart` section, users can include two or more queries, and the result charts will be shown vertically.   
 
-In the layout part, the user can define the page in rows, as indicated by "row0", "row1", etc. Each row can have several subsections, which will be presented side by side. And tge weight and height information will be translated into -% information.
+```
+Take-aways:
+1. for chart section: 
+	1) user can freely name the chart by replacing "name_it_your_self 1" with the name
+	2) "query" and "chart_def" are required
+	3) "title" and "x", "y" (stands for xy mapping) are optional
+	4) at present, we only support histogram/line chart/scatter/histogram 
+2. for markdown definition:
+	1) user can freely name the chart by replacing "name_it_your_self 2" with the name
+3. what is "charts":
+	1) it lists the name of the chart 
+4. what is "markdowns"
+	1) it lists the name of the markdown
+5. what is layout
+	1) it defines the subpage and its content
+	2) user can use markdown as the header of the sub page, or they can use random name, which will not be shown on the page
 
 
 #### Running Code   
