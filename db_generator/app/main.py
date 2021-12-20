@@ -22,5 +22,5 @@ class Input(object):
         os.system(string)
         return
 
-initial = Input("input.json", 'localhost', 'mag_test', 'root', 'MySQLSxn200519')
+initial = Input("input.json", '...', '...', '...', '...') # need customize
 initial.run()
