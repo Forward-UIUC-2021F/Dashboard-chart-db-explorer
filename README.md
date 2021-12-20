@@ -41,7 +41,7 @@ An example `.json` file is presented below,
 ```
 {
   "name_it_your_self 1": [
-    {"query": "...;", "chart_def": "histogram/line chart/scatter/histogram"(,"title": "...","x": [1], "y": [0])}
+    {"query": "...;", "chart_def": "histogram/line chart/scatter/histogram","title": "..." (,"x": [1], "y": [0])}
   ],
   "name_it_your_self 2": ["...this is for markdown..."],
   "charts": ["name_it_your_self 1"],
@@ -53,8 +53,8 @@ An example `.json` file is presented below,
 #### Take-aways:
 1. for chart section: 
 	1) user can freely name the chart by replacing "name_it_your_self 1" with the name
-	2) "query" and "chart_def" are required
-	3) "title" and "x", "y" (stands for xy mapping) are optional
+	2) "query", "chart_def" and "title" are required
+	3) "x", "y" (stands for xy mapping) are optional
 	4) at present, we only support histogram/line chart/scatter/table 
 2. for markdown definition:
 	1) user can freely name the chart by replacing "name_it_your_self 2" with the name
