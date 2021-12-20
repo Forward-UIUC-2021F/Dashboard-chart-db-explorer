@@ -21,6 +21,7 @@ Below is an overall breakdown of my repo's file structure.
 db_generator/
     - requirements.txt
     - app/ 
+    	-- __init__.py
     	-- main.py
         -- app.py
 	-- chart_def.py
@@ -30,7 +31,7 @@ db_generator/
     - assets/
         -- style.css
 ```
-Notice that the `main.py` file need customize (need include user's database information to connect to the database) and the `input.json` file the an example input file for query and chart definition (the detailed instruction to write your own input file is included below).
+Notice that the `input.json` file the an example input file for query and chart definition (the detailed instruction to write your own input file is included below).
 
 ## Functional Design
 #### Input Definition 
@@ -72,7 +73,7 @@ An example `.json` file is presented below,
 First install os module locally, and import it. User can get access to a help function called `run(file_dir)`, which receive a parameter called file_dir that points to the prepared json file as shown above. The help function pass the file_dir as an argv.  
 
 ```
-class Input(object):
+class dash_generator(object):
     def __init__(self, file_dir, host, database, user, password):
         self.file_dir = file_dir
         self.host = host
@@ -88,8 +89,8 @@ class Input(object):
 To generate web dashboard:
 ```
 # run the program
-initial = Input("XXX.json", '...', '...', '...', '...')
-initial.run()
+module = dash_generator("XXX.json", '...', '...', '...', '...')
+module.run()
 ```
 
 #### Demo video
