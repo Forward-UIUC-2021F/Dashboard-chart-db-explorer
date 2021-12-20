@@ -70,7 +70,7 @@ An example `.json` file is presented below,
 
 #### Starting Code   
 
-First install os module locally, and import it. User can get access to a help function called `run(file_dir)`, which receive a parameter called file_dir that points to the prepared json file as shown above. The help function pass the file_dir as an argv.  
+User can get access to a help function called `run()`.  
 
 ```
 class dash_generator(object):
