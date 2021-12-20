@@ -94,6 +94,9 @@ initial.run()
 
 #### Demo video
 
+https://user-images.githubusercontent.com/89476239/146725588-da276c99-4ecc-4b5e-8c45-0075d2e64f10.mp4
+
+
 ## Algorithmic Design
 The user store the query and chart_def in pairs inside of the JSON file and pass the file directory into the "dashboard generator". The `helpfunc.py` file takes this information, it reads the queries from the file and pass them to the database, and get the query result. The `chart_def.py` file takes the result and the (unchanged) chart_def and transfer the result into chart configurations according to the char_def. The configuration and the chart_def can be turned into dashboard in the `app.py` file once the file is run by the user.
 
