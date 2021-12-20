@@ -7,5 +7,5 @@ purpose: starting code
 # example starting code
 from main import dash_generator
 
-module = dash_generator("input.json", 'localhost', 'mag_test', 'root', 'MySQLSxn200519')
+module = dash_generator("XXX.json", '...', '...', '...', '...')
 module.run()
