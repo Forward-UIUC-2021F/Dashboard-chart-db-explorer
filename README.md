@@ -37,7 +37,7 @@ Notice that the `main.py` file need customize (need include user's database info
 
 User that requests the web dashboard need to prepare a `.JSON` file that contains layout (of the dashboard), queries and their corresponding chart_def, or other elements like markdown. By default, the x y mapping is in the order of the selected element in the corresponding query, But the users can also choose to write x y mapping explicitly. Here, the index(idx) corresponds to the order (start from 0) of the selected elements in the given query. For example, if the query select id and average_vote, then {...,"x":[1],...} means that we take average_vote as the x axis.   
 
-An example `input.json` file is presented below,
+An example `.json` file is presented below,
 ```
 {
   "name_it_your_self 1": [
@@ -88,7 +88,7 @@ class Input(object):
 To generate web dashboard:
 ```
 # run the program
-initial = Input("input.json", '...', '...', '...', '...')
+initial = Input("XXX.json", '...', '...', '...', '...')
 initial.run()
 ```
 
