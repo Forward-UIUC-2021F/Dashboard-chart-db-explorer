@@ -7,5 +7,6 @@ purpose: starting code
 # example starting code
 from main import dash_generator
 
-module = dash_generator("XXX.json", '...', '...', '...', '...')
-module.run()
+# example running code
+# module = dash_generator("XXX.json", '...', '...', '...', '...')
+# module.run()
